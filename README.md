@@ -14,10 +14,12 @@ Developed a Streamlit application that allows users to upload an image of a busi
 Authenticate the user into the application using email and password. User can click on signup if not registered already
 
 <img width="631" alt="image" src="https://github.com/SharmilaAnanthasayanam/Extracting-Business-Card-Data-with-OCR/assets/112562560/b89bfa4d-bf1d-4d14-90b1-ece283ec35ac">
-### 2. Signup Page :
+
+### 2.Signup Page :
 Create an account for the user by getting username, email and password. After signing up user can go to login page to login into the app.
 
 <img width="631" alt="image" src="https://github.com/SharmilaAnanthasayanam/Extracting-Business-Card-Data-with-OCR/assets/112562560/d6e785c6-b2d8-45d7-ba05-99f93a89147c">
+
 ### 3. Bizcard Page :
 Enables user to upload the business card image and extract the details.
 
