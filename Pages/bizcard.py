@@ -19,8 +19,7 @@ def UI_communication(value):
       lottie_streamlit = load_lottiefile("Loading.json")
       st.lottie(lottie_streamlit, speed=1.0, reverse = False, height=200)
 
-# st.subheader(f"Welcome {login.user_id.uid}!")
-
+#Welcome message
 st.subheader(f":orange[Welcome {st.session_state['username']}!]") 
 uploaded_file = st.file_uploader("Choose a file")
 
@@ -81,6 +80,7 @@ if uploaded_file:
 
   loading_holder.empty()
 
+  #Displaying fetched details
   st.write(":blue[Please find the fetched details below and feel free to edit as required]")
 
   info_dict["Company"]  = st.text_input(':green[Company]', info_dict["Company"].title() )
@@ -98,8 +98,8 @@ if uploaded_file:
     info_dict["Phone Number"] = info_dict["Phone Number"].replace(i,"")
   info_dict["Phone Number"] = info_dict["Phone Number"].split(",")
   
-  card_id = database.existing(info_dict["Owner Name"], info_dict["Company"] )
-
+  #Database operations
+  card_id = database.existing(info_dict["Owner Name"], info_dict["Company"])
   if card_id:
     card_id = card_id[0][0]
     message = ""
@@ -108,8 +108,7 @@ if uploaded_file:
       clicked = st.button(":red[Update to Database]")
       if clicked:
         database.update(info_dict, card_id)
-        message = "Updated data Successfully!"
-        
+        message = "Updated data Successfully!"   
     with col2:
       clicked = st.button(":red[Delete from Database]")
       if clicked:
@@ -126,7 +125,8 @@ if uploaded_file:
         card_id = 1
       database.insert(info_dict, card_id, encoded_image)
       st.success('Inserted data Successfully!', icon="✅")
-  
+
+#logout button
 col1, col2 = st.columns([15,2])
 with col2:
   clicked = st.button(":blue[logout]")
